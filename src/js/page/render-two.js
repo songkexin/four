@@ -13,7 +13,8 @@ $(function() {
 				pagination: '.tmc_jr1 .swiper-pagination',
 				paginationClickable: true,
 				spaceBetween: 5,
-				autoplay: 1000
+				autoplay: 1000,
+				loop:true
 			});
 		},
 		tm3: function() {
@@ -25,46 +26,75 @@ $(function() {
 			});
 		},
 		tm4: function() {
-			var cha = null;
-			var timer = null;
+//			var cha = null;
+//			var timer = null;
+//
+//			function getCha() {
+//				var date = new Date();
+//				var weilai = new Date('2017-6-6 22:00:00');
+//				cha = weilai.getTime() - date.getTime(); //毫秒
+//
+//				//    时
+//				var hour = Math.floor(cha / (1000 * 60 * 60));
+//				var hours = hour * 60 * 60 * 1000;
+//				var cha1 = cha - hours;
+//				//分
+//				var min = Math.floor(cha1 / (1000 * 60));
+//				var mins = min * 60 * 1000;
+//				var cha2 = cha1 - mins;
+//				//秒
+//				var se = Math.floor(cha2 / 1000);
+//				//毫秒、
+//				var hm = Math.floor(cha % 10);
+//
+//				return zero(hour) + ':' + zero(min) + ':' + zero(se) + ':' + hm;
+//			}
+//
+//			function zero(n) {
+//				return n = n < 10 ? '0' + n : n;
+//			}
+//			var odiv = document.getElementById('odiv');
+//			odiv.innerHTML = '距离目标: ' + getCha();
+//			if(cha <= 0) {
+//				clearInterval(timer);
+//				odiv.innerHTML = '时间到了';
+//			}
+//			timer = window.setInterval(function() {
+//				odiv.innerHTML = '距离目标: ' + getCha();
+//				if(cha <= 0) {
+//					clearInterval(timer);
+//					odiv.innerHTML = '时间到了';
+//				}
+//			}, 100);
 
-			function getCha() {
-				var date = new Date();
-				var weilai = new Date('2017-6-5 22:00:00');
-				cha = weilai.getTime() - date.getTime(); //毫秒
 
-				//    时
-				var hour = Math.floor(cha / (1000 * 60 * 60));
-				var hours = hour * 60 * 60 * 1000;
-				var cha1 = cha - hours;
-				//分
-				var min = Math.floor(cha1 / (1000 * 60));
-				var mins = min * 60 * 1000;
-				var cha2 = cha1 - mins;
-				//秒
-				var se = Math.floor(cha2 / 1000);
-				//毫秒、
-				var hm = Math.floor(cha % 10);
-
-				return zero(hour) + ':' + zero(min) + ':' + zero(se) + ':' + hm;
+function times(){
+				   	var endtime=new Date('2017/06/07 24:00:00');
+				   	var strtime=new Date();
+				   	var t=endtime.getTime()-strtime.getTime();				   
+					var h=0;
+					var m=0;
+					var s=0;
+					if(t>=0){
+						h=Math.floor(t/1000/60/60%24);
+						m=Math.floor(t/1000/60%60);
+						s=Math.floor(t/1000%60);
+						ss=Math.floor(t%100);							
+					}
+					$('.tmsp2').html(zero(h));
+					$('.tmsp3').html(zero(m));
+					$('.tmsp4').html(zero(s));
+					$('.tmsp5').html(zero(ss));
+			  }
+			function zero(n){
+					return n=n<10?'0'+n:n;
 			}
-
-			function zero(n) {
-				return n = n < 10 ? '0' + n : n;
-			}
-			var odiv = document.getElementById('odiv');
-			odiv.innerHTML = '距离目标: ' + getCha();
-			if(cha <= 0) {
-				clearInterval(timer);
-				odiv.innerHTML = '时间到了';
-			}
-			timer = window.setInterval(function() {
-				odiv.innerHTML = '距离目标: ' + getCha();
-				if(cha <= 0) {
-					clearInterval(timer);
-					odiv.innerHTML = '时间到了';
-				}
-			}, 100);
+				 setInterval(times,10);
+      
+			 
+			
+			
+			
 		},
 		tm5: function() {
 			$(".tm_nav ul>li>a").click(function() {
