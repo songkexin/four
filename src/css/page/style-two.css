@@ -1,5 +1,6 @@
 @import url("../lib/reset.css");
 @import url("../lib/swiper.min.css");
+
 .tm_main {
   width: 100%;
   height: 100%;
@@ -65,14 +66,11 @@
   float: left;
   width: 25%;
   height: 3.6rem;
-}
-.tm_main .tm_nav li a {
-  color: #000000;
-  display: inline-block;
   font-size: 1.2rem;
+  color: #000000;
   height: 3.3rem;
 }
-.tm_main .tm_nav li .tmn_a {
+.tm_main .tm_nav .tmn_a {
   color: #e21f25;
   border-bottom: 1px solid #e21f25;
 }
@@ -83,6 +81,10 @@
 }
 .tm_main .tm_conten .tmc_jr {
   width: 100%;
+  display: none;
+}
+.tm_main .tm_conten .tm-active{
+	display: block;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr1 {
   height: 15rem;
@@ -102,7 +104,7 @@
   height: auto;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr1 .swiper-pagination {
-  margin-left: 13rem;
+  margin-left: 100px;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr1 .tmcj_img {
   width: 100%;
@@ -113,7 +115,7 @@
   height: 100%;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 {
-  height: 17rem ;
+  height: 16rem ;
   margin-top: 1rem;
   background: #FFFFFF;
 }
@@ -127,7 +129,7 @@
   width: 100%;
   height: 100%;
 }
-.tm_main .tm_conten .tmc_jr .tmc_jr2 .title .tmodiv {
+.tm_main .tm_conten .tmc_jr .tmc_jr2 .title #odiv {
   width: 100%;
   height: 1.5rem;
   color: red;
@@ -137,7 +139,6 @@
   font-size: 1rem;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 .tmc2_sweip {
-  width: 100%;
   background: #FFFFFF;
   border-bottom: 1px solid #999999;
 }
@@ -147,21 +148,21 @@
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 .tmc2_sweip .tmc2_ceten a {
   width: 28.5%;
-  height: 7.4rem;
+  height: 8.4rem;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 .tmc2_sweip .tmc2_ceten a img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 .tmc2_sweip .tmc2_ceten p {
-  height: 2.5rem;
+  height: 2.6rem;
   font-size: 1rem;
   width: 100%;
   overflow: hidden;
   white-space: normal;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 .tmc2_sweip .tmc2_ceten h6 {
-  height: 1rem;
+  height: 1.5rem;
   padding: 0.5rem 0;
 }
 .tm_main .tm_conten .tmc_jr .tmc_jr2 .tmc2_sweip .tmc2_ceten h6 span {
@@ -198,12 +199,6 @@
 .tm_main .tm_conten .tmc_jr .tmc_jr5 p {
   background: #FFFFFF;
   text-align: center;
-}
-.tm_main .tm_conten .tmc_fx {
-  display: none;
-}
-.tm_main .tm_conten .tmc_jj {
-  display: none;
 }
 .tm_footer {
   position: fixed;
